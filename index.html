@@ -15,6 +15,10 @@
     function computerPlay() {
 
         let compSelectionInt
+        let yourPick
+        let hisPick
+        let winCount = 0
+        let lossCount = 0
 
         function getRandomInt(max) 
             return Math.floor(Math.random() * Math.floor(max))
@@ -55,9 +59,11 @@
         if (gameState == 'win') {
             winner = playerSelection
             loser = compSelection
+            winCount++
         } else {
             winner = compSelection
             loser = playerSelection
+            lossCount++
         }
 
         //set up the return statement
@@ -69,9 +75,23 @@
     }
         return compSelection;
     }
+    // create a function that plays 5 rounds, keeps score, 
+    // and reports results
+    function game() {
 
-    // main gameplay loop starts here
+        console.log("Let's play Rock, Paper, Scissors.")
+
+        for (let i = 0; i < 5; i++) {
+            //create inputs for computer and player
+            yourPick = prompt("Rock, Paper, or Scissors?")
+            hisPick = computerPlay()
+
+            playRound(yourPick, hisPick)
+            
+        }
+    }
     
+    game()
   </script>
 </body>
 </html>
