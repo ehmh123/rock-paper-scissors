@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+    // set up variables
+    const rock = 0
+    const paper = 1
+    const scissors = 2
+    let compSelection
+
+    //create functions for gameplay loop
+    function computerPlay() {
+
+        let compSelectionInt
+
+        function getRandomInt(max) 
+            return Math.floor(Math.random() * Math.floor(max))
+        
+        compSelectionInt = getRandomInt(3)
+
+        switch(compSelectionInt) {
+            case 0: 
+                compSelection = 'Rock'
+            case 1: 
+                compSelection = 'Paper'
+            case 2:
+                compSelection = 'Scissors'
+        }
+    
+    function playRound(playerSelection, compSelection) {
+        let gameState 
+        let winner
+        let loser
+
+        //set the procedure for comparing choice
+        if (playerSelection.toUpperCase() == compSelection.toUpperCase()) {
+            gameState = 'draw'
+        } if ((playerSelection.toUpperCase() == 'Rock' && 
+                compSelection.toUpperCase() == 'Scissors') ||
+                (playerSelection.toUpperCase() == 'Scissors' && 
+                compSelection.toUpperCase() == 'Paper')||
+                (playerSelection.toUpperCase() == 'Paper' && 
+                compSelection.toUpperCase() == 'Rock'))
+                {
+                    gameState = 'win'
+                } else {
+                    gameState = 'lose'
+                }
+        
+        //set the placeholder values to record the winning and losing
+        // moves
+        if (gameState == 'win') {
+            winner = playerSelection
+            loser = compSelection
+        } else {
+            winner = compSelection
+            loser = playerSelection
+        }
+
+        //set up the return statement
+        if (gameState = 'draw') {        
+            return 'It\'s a draw!'
+        } else {
+            return 'You ${gameState}! ${winner} beats ${loser}.'
+        }
+    }
+        return compSelection;
+    }
+
+    // main gameplay loop starts here
+    
+  </script>
+</body>
+</html>
